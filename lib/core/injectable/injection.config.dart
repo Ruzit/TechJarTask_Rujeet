@@ -19,6 +19,8 @@ import 'package:techjar_task_rujeet/features/posts/domain/controller/post_contro
     as _i289;
 import 'package:techjar_task_rujeet/features/posts/domain/repository/post_repository.dart'
     as _i14;
+import 'package:techjar_task_rujeet/features/posts/presentation/bloc/post_bloc.dart'
+    as _i185;
 
 extension GetItInjectableX on _i174.GetIt {
 // initializes the registration of main-scope dependencies inside of GetIt
@@ -37,6 +39,8 @@ extension GetItInjectableX on _i174.GetIt {
         () => _i441.PostRepositoryImpl(gh<_i519.Client>()));
     gh.factory<_i289.PostController>(
         () => _i289.PostControllerImpl(gh<_i14.PostRepository>()));
+    gh.factory<_i185.PostBloc>(
+        () => _i185.PostBloc(gh<_i289.PostController>()));
     return this;
   }
 }

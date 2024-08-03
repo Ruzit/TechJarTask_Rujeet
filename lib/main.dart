@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:techjar_task_rujeet/config/app_theme.dart';
+import 'package:techjar_task_rujeet/core/injectable/injection.dart';
 
 import 'features/posts/presentation/pages/home_page.dart';
 
 void main() {
+  configureInjection();
   runApp(const MyApp());
 }
 
