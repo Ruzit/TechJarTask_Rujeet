@@ -15,11 +15,17 @@ class PostTile extends StatelessWidget {
     return Card(
       margin: const EdgeInsets.all(12.0),
       child: ListTile(
+        contentPadding: const EdgeInsets.symmetric(
+          horizontal: 12,
+          vertical: 16,
+        ),
         minVerticalPadding: 10,
-        leading: const Icon(Icons.newspaper, size: 30),
+        leading: const Icon(Icons.newspaper, size: 42),
+        isThreeLine: true,
         title: Text(
           post.title ?? '',
           overflow: TextOverflow.ellipsis,
+          style: const TextStyle(fontWeight: FontWeight.bold),
         ),
         subtitle: Text(
           post.body ?? '',

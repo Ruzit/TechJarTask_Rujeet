@@ -4,6 +4,7 @@ import 'package:techjar_task_rujeet/core/injectable/injection.dart';
 import 'package:techjar_task_rujeet/features/user/presentation/bloc/user_bloc.dart';
 
 import '../../../user/data/models/user_model.dart';
+import '../../../user/presentation/pages/user_page.dart';
 
 class AuthorWidget extends StatefulWidget {
   const AuthorWidget({
@@ -37,7 +38,15 @@ class AuthorWidgetState extends State<AuthorWidget> {
                 style: TextButton.styleFrom(
                   foregroundColor: Colors.blueAccent,
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return UserPage(userId: user.id ?? 0);
+                      },
+                    ),
+                  );
+                },
               );
             },
           );

@@ -31,13 +31,18 @@ class _HomePageState extends State<HomePage> {
                 return const SizedBox();
               },
               postLoaded: (List<PostModel> postsList) {
-                return ListView.builder(
-                  itemCount: postsList.length,
-                  itemBuilder: (context, index) {
-                    return PostTile(
-                      post: postsList[index],
-                    );
+                return RefreshIndicator.adaptive(
+                  onRefresh: () async {
+                    postBloc.add(const PostEvent.refresh());
                   },
+                  child: ListView.builder(
+                    itemCount: postsList.length,
+                    itemBuilder: (context, index) {
+                      return PostTile(
+                        post: postsList[index],
+                      );
+                    },
+                  ),
                 );
               },
             );

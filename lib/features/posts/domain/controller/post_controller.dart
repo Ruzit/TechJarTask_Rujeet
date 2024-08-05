@@ -8,6 +8,8 @@ abstract class PostController {
   Future<Either<String, List<PostModel>>> getPosts();
 
   Future<Either<String, PostModel>> getPostById(int id);
+
+  Future<Either<String, List<PostModel>>> getAllPostsByUser(int userId);
 }
 
 @Injectable(as: PostController)
@@ -24,5 +26,10 @@ class PostControllerImpl implements PostController {
   @override
   Future<Either<String, PostModel>> getPostById(int id) async {
     return await _postRepository.getPostById(id);
+  }
+
+  @override
+  Future<Either<String, List<PostModel>>> getAllPostsByUser(int userId) async {
+    return await _postRepository.getAllPostsByUser(userId);
   }
 }

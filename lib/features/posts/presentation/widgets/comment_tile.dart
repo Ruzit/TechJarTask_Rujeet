@@ -19,13 +19,17 @@ class CommentTile extends StatelessWidget {
           Text(
             comment.email ?? '',
             style: Theme.of(context).textTheme.bodySmall!.copyWith(
-                  color: Colors.blue,
+                  color: Colors.purple,
                 ),
           ),
           Text(comment.name ?? ''),
         ],
       ),
-      subtitle: Text(comment.body ?? ''),
+      subtitle: Text(
+        comment.body ?? '',
+        maxLines: 2,
+        overflow: TextOverflow.ellipsis,
+      ),
     );
   }
 }

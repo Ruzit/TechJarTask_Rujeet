@@ -13,6 +13,14 @@ import 'package:http/http.dart' as _i519;
 import 'package:injectable/injectable.dart' as _i526;
 import 'package:techjar_task_rujeet/core/injectable/register_module.dart'
     as _i678;
+import 'package:techjar_task_rujeet/features/albums/data/repository/album_repository_impl.dart'
+    as _i928;
+import 'package:techjar_task_rujeet/features/albums/domain/controller/album_controller.dart'
+    as _i46;
+import 'package:techjar_task_rujeet/features/albums/domain/repository/album_repository.dart'
+    as _i231;
+import 'package:techjar_task_rujeet/features/albums/presentation/bloc/album_bloc.dart'
+    as _i376;
 import 'package:techjar_task_rujeet/features/comments/data/repository/comment_repository_impl.dart'
     as _i233;
 import 'package:techjar_task_rujeet/features/comments/domain/controller/comment_controller.dart'
@@ -51,10 +59,14 @@ extension GetItInjectableX on _i174.GetIt {
     );
     final registerModule = _$RegisterModule();
     gh.lazySingleton<_i519.Client>(() => registerModule.httpClient);
+    gh.factory<_i231.AlbumRepository>(
+        () => _i928.AlbumRepositoryImpl(gh<_i519.Client>()));
     gh.factory<_i640.UserRepository>(
         () => _i689.UserRepositoryImpl(gh<_i519.Client>()));
     gh.factory<_i506.UserController>(
         () => _i506.UserControllerImpl(gh<_i640.UserRepository>()));
+    gh.factory<_i46.AlbumController>(
+        () => _i46.AlbumControllerImpl(gh<_i231.AlbumRepository>()));
     gh.factory<_i14.PostRepository>(
         () => _i441.PostRepositoryImpl(gh<_i519.Client>()));
     gh.factory<_i846.CommentRepository>(
@@ -65,6 +77,8 @@ extension GetItInjectableX on _i174.GetIt {
         () => _i289.PostControllerImpl(gh<_i14.PostRepository>()));
     gh.factory<_i859.CommentController>(
         () => _i859.CommentControllerImpl(gh<_i846.CommentRepository>()));
+    gh.factory<_i376.AlbumBloc>(
+        () => _i376.AlbumBloc(gh<_i46.AlbumController>()));
     gh.factory<_i617.CommentBloc>(
         () => _i617.CommentBloc(gh<_i859.CommentController>()));
     gh.factory<_i185.PostBloc>(

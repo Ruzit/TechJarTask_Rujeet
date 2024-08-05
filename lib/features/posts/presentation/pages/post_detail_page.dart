@@ -27,6 +27,7 @@ class _PostDetailPageState extends State<PostDetailPage> {
       child: Scaffold(
         appBar: AppBar(
           title: const Text('Post Detail'),
+          centerTitle: true,
         ),
         body: Padding(
             padding: const EdgeInsets.all(8.0),
@@ -45,7 +46,10 @@ class _PostDetailPageState extends State<PostDetailPage> {
                           padding: const EdgeInsets.all(8.0),
                           child: Text(
                             post.title ?? '',
-                            style: Theme.of(context).textTheme.titleLarge,
+                            style: Theme.of(context)
+                                .textTheme
+                                .titleLarge
+                                ?.copyWith(fontWeight: FontWeight.bold),
                           ),
                         ),
                         Padding(
@@ -158,6 +162,7 @@ class _PostCommentsState extends State<PostComments> {
                         );
                         FocusScope.of(context).unfocus();
                       },
+                      textInputAction: TextInputAction.send,
                     ),
                   ),
                 ],
