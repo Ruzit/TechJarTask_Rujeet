@@ -3,6 +3,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:techjar_task_rujeet/features/posts/domain/controller/post_controller.dart';
 
+import '../../data/models/comment_model.dart';
 import '../../data/models/post_model.dart';
 
 part 'post_bloc.freezed.dart';
@@ -17,10 +18,27 @@ class PostBloc extends Bloc<PostEvent, PostState> {
       await event.when(
         started: () {},
         getPosts: () async {
+          emit(const PostState.loading());
           final response = await controller.getPosts();
           response.fold(
             (l) => emit(PostState.error(l)),
             (r) => emit(PostState.postLoaded(r)),
+          );
+        },
+        getPostById: (int id) async {
+          emit(const PostState.loading());
+          final response = await controller.getPostById(id);
+          response.fold(
+            (l) => emit(PostState.error(l)),
+            (r) => emit(PostState.postByIdLoaded(r)),
+          );
+        },
+        getCommentsOfPost: (int postId) async {
+          emit(const PostState.loading());
+          final response = await controller.getAllCommentsOfPost(postId);
+          response.fold(
+            (l) => emit(PostState.error(l)),
+            (r) => emit(PostState.commentsLoaded(r)),
           );
         },
       );

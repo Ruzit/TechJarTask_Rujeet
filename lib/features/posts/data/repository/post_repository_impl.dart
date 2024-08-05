@@ -7,6 +7,8 @@ import 'package:techjar_task_rujeet/core/constants/app_constants.dart';
 import 'package:techjar_task_rujeet/features/posts/data/models/post_model.dart';
 import 'package:techjar_task_rujeet/features/posts/domain/repository/post_repository.dart';
 
+import '../models/comment_model.dart';
+
 @Injectable(as: PostRepository)
 class PostRepositoryImpl implements PostRepository {
   final http.Client _client;
@@ -23,6 +25,39 @@ class PostRepositoryImpl implements PostRepository {
         final rawPosts = jsonDecode(response.body) as List;
         final postList = rawPosts.map((e) => PostModel.fromJson(e)).toList();
         return right(postList);
+      } else {
+        return left('Exception');
+      }
+    } catch (e) {
+      return left(e.toString());
+    }
+  }
+
+  @override
+  Future<Either<String, PostModel>> getPostById(int id) async {
+    try {
+      final res = await http.get(Uri.parse('$baseUrl/posts/$id'));
+      if (res.statusCode == 200) {
+        final rawPost = json.decode(res.body);
+        return right(PostModel.fromJson(rawPost));
+      } else {
+        return left('Exception');
+      }
+    } catch (e) {
+      return left(e.toString());
+    }
+  }
+
+  @override
+  Future<Either<String, List<CommentModel>>> getAllCommentsOfPost(
+      int postId) async {
+    try {
+      final res = await http.get(Uri.parse('$baseUrl/posts/$postId/comments'));
+      if (res.statusCode == 200) {
+        final rawComments = json.decode(res.body) as List;
+        final commentList =
+            rawComments.map((e) => CommentModel.fromJson(e)).toList();
+        return right(commentList);
       } else {
         return left('Exception');
       }

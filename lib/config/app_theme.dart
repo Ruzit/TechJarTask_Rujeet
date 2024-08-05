@@ -8,13 +8,14 @@ class AppTheme {
     brightness: Brightness.light,
     primaryColor: Colors.teal,
     appBarTheme: const AppBarTheme(
-      iconTheme: IconThemeData(color: Colors.black),
+      iconTheme: IconThemeData(color: Colors.white),
       titleTextStyle: TextStyle(
         fontSize: 16,
         fontWeight: FontWeight.bold,
         color: Colors.white,
       ),
       backgroundColor: Colors.teal,
+      elevation: 0,
     ),
     cardTheme: const CardTheme(elevation: 8),
   );

@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:techjar_task_rujeet/core/injectable/injection.dart';
 import 'package:techjar_task_rujeet/features/posts/data/models/post_model.dart';
 import 'package:techjar_task_rujeet/features/posts/presentation/bloc/post_bloc.dart';
+import 'package:techjar_task_rujeet/features/posts/presentation/widgets/post_tile.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -33,9 +34,8 @@ class _HomePageState extends State<HomePage> {
                 return ListView.builder(
                   itemCount: postsList.length,
                   itemBuilder: (context, index) {
-                    return ListTile(
-                      title: Text(postsList[index].title ?? ''),
-                      subtitle: Text(postsList[index].body ?? ''),
+                    return PostTile(
+                      post: postsList[index],
                     );
                   },
                 );
