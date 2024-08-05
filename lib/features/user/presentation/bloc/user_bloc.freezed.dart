@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'post_bloc.dart';
+part of 'user_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,63 +15,57 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
-mixin _$PostEvent {
+mixin _$UserEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function() getPosts,
-    required TResult Function(int id) getPostById,
+    required TResult Function(int id) getUserById,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function()? getPosts,
-    TResult? Function(int id)? getPostById,
+    TResult? Function(int id)? getUserById,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function()? getPosts,
-    TResult Function(int id)? getPostById,
+    TResult Function(int id)? getUserById,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_GetPosts value) getPosts,
-    required TResult Function(_GetPostsById value) getPostById,
+    required TResult Function(_GetUserById value) getUserById,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
-    TResult? Function(_GetPosts value)? getPosts,
-    TResult? Function(_GetPostsById value)? getPostById,
+    TResult? Function(_GetUserById value)? getUserById,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_GetPosts value)? getPosts,
-    TResult Function(_GetPostsById value)? getPostById,
+    TResult Function(_GetUserById value)? getUserById,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $PostEventCopyWith<$Res> {
-  factory $PostEventCopyWith(PostEvent value, $Res Function(PostEvent) then) =
-      _$PostEventCopyWithImpl<$Res, PostEvent>;
+abstract class $UserEventCopyWith<$Res> {
+  factory $UserEventCopyWith(UserEvent value, $Res Function(UserEvent) then) =
+      _$UserEventCopyWithImpl<$Res, UserEvent>;
 }
 
 /// @nodoc
-class _$PostEventCopyWithImpl<$Res, $Val extends PostEvent>
-    implements $PostEventCopyWith<$Res> {
-  _$PostEventCopyWithImpl(this._value, this._then);
+class _$UserEventCopyWithImpl<$Res, $Val extends UserEvent>
+    implements $UserEventCopyWith<$Res> {
+  _$UserEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -88,7 +82,7 @@ abstract class _$$StartedImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$StartedImplCopyWithImpl<$Res>
-    extends _$PostEventCopyWithImpl<$Res, _$StartedImpl>
+    extends _$UserEventCopyWithImpl<$Res, _$StartedImpl>
     implements _$$StartedImplCopyWith<$Res> {
   __$$StartedImplCopyWithImpl(
       _$StartedImpl _value, $Res Function(_$StartedImpl) _then)
@@ -102,7 +96,7 @@ class _$StartedImpl implements _Started {
 
   @override
   String toString() {
-    return 'PostEvent.started()';
+    return 'UserEvent.started()';
   }
 
   @override
@@ -118,8 +112,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function() getPosts,
-    required TResult Function(int id) getPostById,
+    required TResult Function(int id) getUserById,
   }) {
     return started();
   }
@@ -128,8 +121,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function()? getPosts,
-    TResult? Function(int id)? getPostById,
+    TResult? Function(int id)? getUserById,
   }) {
     return started?.call();
   }
@@ -138,8 +130,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function()? getPosts,
-    TResult Function(int id)? getPostById,
+    TResult Function(int id)? getUserById,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -152,8 +143,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_GetPosts value) getPosts,
-    required TResult Function(_GetPostsById value) getPostById,
+    required TResult Function(_GetUserById value) getUserById,
   }) {
     return started(this);
   }
@@ -162,8 +152,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
-    TResult? Function(_GetPosts value)? getPosts,
-    TResult? Function(_GetPostsById value)? getPostById,
+    TResult? Function(_GetUserById value)? getUserById,
   }) {
     return started?.call(this);
   }
@@ -172,8 +161,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_GetPosts value)? getPosts,
-    TResult Function(_GetPostsById value)? getPostById,
+    TResult Function(_GetUserById value)? getUserById,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -183,133 +171,25 @@ class _$StartedImpl implements _Started {
   }
 }
 
-abstract class _Started implements PostEvent {
+abstract class _Started implements UserEvent {
   const factory _Started() = _$StartedImpl;
 }
 
 /// @nodoc
-abstract class _$$GetPostsImplCopyWith<$Res> {
-  factory _$$GetPostsImplCopyWith(
-          _$GetPostsImpl value, $Res Function(_$GetPostsImpl) then) =
-      __$$GetPostsImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$GetPostsImplCopyWithImpl<$Res>
-    extends _$PostEventCopyWithImpl<$Res, _$GetPostsImpl>
-    implements _$$GetPostsImplCopyWith<$Res> {
-  __$$GetPostsImplCopyWithImpl(
-      _$GetPostsImpl _value, $Res Function(_$GetPostsImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$GetPostsImpl implements _GetPosts {
-  const _$GetPostsImpl();
-
-  @override
-  String toString() {
-    return 'PostEvent.getPosts()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$GetPostsImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() started,
-    required TResult Function() getPosts,
-    required TResult Function(int id) getPostById,
-  }) {
-    return getPosts();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
-    TResult? Function()? getPosts,
-    TResult? Function(int id)? getPostById,
-  }) {
-    return getPosts?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
-    TResult Function()? getPosts,
-    TResult Function(int id)? getPostById,
-    required TResult orElse(),
-  }) {
-    if (getPosts != null) {
-      return getPosts();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
-    required TResult Function(_GetPosts value) getPosts,
-    required TResult Function(_GetPostsById value) getPostById,
-  }) {
-    return getPosts(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
-    TResult? Function(_GetPosts value)? getPosts,
-    TResult? Function(_GetPostsById value)? getPostById,
-  }) {
-    return getPosts?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
-    TResult Function(_GetPosts value)? getPosts,
-    TResult Function(_GetPostsById value)? getPostById,
-    required TResult orElse(),
-  }) {
-    if (getPosts != null) {
-      return getPosts(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _GetPosts implements PostEvent {
-  const factory _GetPosts() = _$GetPostsImpl;
-}
-
-/// @nodoc
-abstract class _$$GetPostsByIdImplCopyWith<$Res> {
-  factory _$$GetPostsByIdImplCopyWith(
-          _$GetPostsByIdImpl value, $Res Function(_$GetPostsByIdImpl) then) =
-      __$$GetPostsByIdImplCopyWithImpl<$Res>;
+abstract class _$$GetUserByIdImplCopyWith<$Res> {
+  factory _$$GetUserByIdImplCopyWith(
+          _$GetUserByIdImpl value, $Res Function(_$GetUserByIdImpl) then) =
+      __$$GetUserByIdImplCopyWithImpl<$Res>;
   @useResult
   $Res call({int id});
 }
 
 /// @nodoc
-class __$$GetPostsByIdImplCopyWithImpl<$Res>
-    extends _$PostEventCopyWithImpl<$Res, _$GetPostsByIdImpl>
-    implements _$$GetPostsByIdImplCopyWith<$Res> {
-  __$$GetPostsByIdImplCopyWithImpl(
-      _$GetPostsByIdImpl _value, $Res Function(_$GetPostsByIdImpl) _then)
+class __$$GetUserByIdImplCopyWithImpl<$Res>
+    extends _$UserEventCopyWithImpl<$Res, _$GetUserByIdImpl>
+    implements _$$GetUserByIdImplCopyWith<$Res> {
+  __$$GetUserByIdImplCopyWithImpl(
+      _$GetUserByIdImpl _value, $Res Function(_$GetUserByIdImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -317,7 +197,7 @@ class __$$GetPostsByIdImplCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
   }) {
-    return _then(_$GetPostsByIdImpl(
+    return _then(_$GetUserByIdImpl(
       null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -328,22 +208,22 @@ class __$$GetPostsByIdImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$GetPostsByIdImpl implements _GetPostsById {
-  const _$GetPostsByIdImpl(this.id);
+class _$GetUserByIdImpl implements _GetUserById {
+  const _$GetUserByIdImpl(this.id);
 
   @override
   final int id;
 
   @override
   String toString() {
-    return 'PostEvent.getPostById(id: $id)';
+    return 'UserEvent.getUserById(id: $id)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GetPostsByIdImpl &&
+            other is _$GetUserByIdImpl &&
             (identical(other.id, id) || other.id == id));
   }
 
@@ -353,39 +233,36 @@ class _$GetPostsByIdImpl implements _GetPostsById {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$GetPostsByIdImplCopyWith<_$GetPostsByIdImpl> get copyWith =>
-      __$$GetPostsByIdImplCopyWithImpl<_$GetPostsByIdImpl>(this, _$identity);
+  _$$GetUserByIdImplCopyWith<_$GetUserByIdImpl> get copyWith =>
+      __$$GetUserByIdImplCopyWithImpl<_$GetUserByIdImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function() getPosts,
-    required TResult Function(int id) getPostById,
+    required TResult Function(int id) getUserById,
   }) {
-    return getPostById(id);
+    return getUserById(id);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function()? getPosts,
-    TResult? Function(int id)? getPostById,
+    TResult? Function(int id)? getUserById,
   }) {
-    return getPostById?.call(id);
+    return getUserById?.call(id);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function()? getPosts,
-    TResult Function(int id)? getPostById,
+    TResult Function(int id)? getUserById,
     required TResult orElse(),
   }) {
-    if (getPostById != null) {
-      return getPostById(id);
+    if (getUserById != null) {
+      return getUserById(id);
     }
     return orElse();
   }
@@ -394,55 +271,51 @@ class _$GetPostsByIdImpl implements _GetPostsById {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_GetPosts value) getPosts,
-    required TResult Function(_GetPostsById value) getPostById,
+    required TResult Function(_GetUserById value) getUserById,
   }) {
-    return getPostById(this);
+    return getUserById(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
-    TResult? Function(_GetPosts value)? getPosts,
-    TResult? Function(_GetPostsById value)? getPostById,
+    TResult? Function(_GetUserById value)? getUserById,
   }) {
-    return getPostById?.call(this);
+    return getUserById?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_GetPosts value)? getPosts,
-    TResult Function(_GetPostsById value)? getPostById,
+    TResult Function(_GetUserById value)? getUserById,
     required TResult orElse(),
   }) {
-    if (getPostById != null) {
-      return getPostById(this);
+    if (getUserById != null) {
+      return getUserById(this);
     }
     return orElse();
   }
 }
 
-abstract class _GetPostsById implements PostEvent {
-  const factory _GetPostsById(final int id) = _$GetPostsByIdImpl;
+abstract class _GetUserById implements UserEvent {
+  const factory _GetUserById(final int id) = _$GetUserByIdImpl;
 
   int get id;
   @JsonKey(ignore: true)
-  _$$GetPostsByIdImplCopyWith<_$GetPostsByIdImpl> get copyWith =>
+  _$$GetUserByIdImplCopyWith<_$GetUserByIdImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-mixin _$PostState {
+mixin _$UserState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String message) error,
-    required TResult Function(List<PostModel> postsList) postLoaded,
-    required TResult Function(PostModel post) postByIdLoaded,
+    required TResult Function(UserModel user) userLoaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -450,8 +323,7 @@ mixin _$PostState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String message)? error,
-    TResult? Function(List<PostModel> postsList)? postLoaded,
-    TResult? Function(PostModel post)? postByIdLoaded,
+    TResult? Function(UserModel user)? userLoaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -459,8 +331,7 @@ mixin _$PostState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String message)? error,
-    TResult Function(List<PostModel> postsList)? postLoaded,
-    TResult Function(PostModel post)? postByIdLoaded,
+    TResult Function(UserModel user)? userLoaded,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -469,8 +340,7 @@ mixin _$PostState {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_Error value) error,
-    required TResult Function(_PostsLoaded value) postLoaded,
-    required TResult Function(_PostByIdLoaded value) postByIdLoaded,
+    required TResult Function(_UserLoaded value) userLoaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -478,8 +348,7 @@ mixin _$PostState {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Error value)? error,
-    TResult? Function(_PostsLoaded value)? postLoaded,
-    TResult? Function(_PostByIdLoaded value)? postByIdLoaded,
+    TResult? Function(_UserLoaded value)? userLoaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -487,23 +356,22 @@ mixin _$PostState {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_Error value)? error,
-    TResult Function(_PostsLoaded value)? postLoaded,
-    TResult Function(_PostByIdLoaded value)? postByIdLoaded,
+    TResult Function(_UserLoaded value)? userLoaded,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $PostStateCopyWith<$Res> {
-  factory $PostStateCopyWith(PostState value, $Res Function(PostState) then) =
-      _$PostStateCopyWithImpl<$Res, PostState>;
+abstract class $UserStateCopyWith<$Res> {
+  factory $UserStateCopyWith(UserState value, $Res Function(UserState) then) =
+      _$UserStateCopyWithImpl<$Res, UserState>;
 }
 
 /// @nodoc
-class _$PostStateCopyWithImpl<$Res, $Val extends PostState>
-    implements $PostStateCopyWith<$Res> {
-  _$PostStateCopyWithImpl(this._value, this._then);
+class _$UserStateCopyWithImpl<$Res, $Val extends UserState>
+    implements $UserStateCopyWith<$Res> {
+  _$UserStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -520,7 +388,7 @@ abstract class _$$InitialImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$InitialImplCopyWithImpl<$Res>
-    extends _$PostStateCopyWithImpl<$Res, _$InitialImpl>
+    extends _$UserStateCopyWithImpl<$Res, _$InitialImpl>
     implements _$$InitialImplCopyWith<$Res> {
   __$$InitialImplCopyWithImpl(
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
@@ -534,7 +402,7 @@ class _$InitialImpl implements _Initial {
 
   @override
   String toString() {
-    return 'PostState.initial()';
+    return 'UserState.initial()';
   }
 
   @override
@@ -552,8 +420,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String message) error,
-    required TResult Function(List<PostModel> postsList) postLoaded,
-    required TResult Function(PostModel post) postByIdLoaded,
+    required TResult Function(UserModel user) userLoaded,
   }) {
     return initial();
   }
@@ -564,8 +431,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String message)? error,
-    TResult? Function(List<PostModel> postsList)? postLoaded,
-    TResult? Function(PostModel post)? postByIdLoaded,
+    TResult? Function(UserModel user)? userLoaded,
   }) {
     return initial?.call();
   }
@@ -576,8 +442,7 @@ class _$InitialImpl implements _Initial {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String message)? error,
-    TResult Function(List<PostModel> postsList)? postLoaded,
-    TResult Function(PostModel post)? postByIdLoaded,
+    TResult Function(UserModel user)? userLoaded,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -592,8 +457,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_Error value) error,
-    required TResult Function(_PostsLoaded value) postLoaded,
-    required TResult Function(_PostByIdLoaded value) postByIdLoaded,
+    required TResult Function(_UserLoaded value) userLoaded,
   }) {
     return initial(this);
   }
@@ -604,8 +468,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Error value)? error,
-    TResult? Function(_PostsLoaded value)? postLoaded,
-    TResult? Function(_PostByIdLoaded value)? postByIdLoaded,
+    TResult? Function(_UserLoaded value)? userLoaded,
   }) {
     return initial?.call(this);
   }
@@ -616,8 +479,7 @@ class _$InitialImpl implements _Initial {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_Error value)? error,
-    TResult Function(_PostsLoaded value)? postLoaded,
-    TResult Function(_PostByIdLoaded value)? postByIdLoaded,
+    TResult Function(_UserLoaded value)? userLoaded,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -627,7 +489,7 @@ class _$InitialImpl implements _Initial {
   }
 }
 
-abstract class _Initial implements PostState {
+abstract class _Initial implements UserState {
   const factory _Initial() = _$InitialImpl;
 }
 
@@ -640,7 +502,7 @@ abstract class _$$LoadingImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$LoadingImplCopyWithImpl<$Res>
-    extends _$PostStateCopyWithImpl<$Res, _$LoadingImpl>
+    extends _$UserStateCopyWithImpl<$Res, _$LoadingImpl>
     implements _$$LoadingImplCopyWith<$Res> {
   __$$LoadingImplCopyWithImpl(
       _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
@@ -654,7 +516,7 @@ class _$LoadingImpl implements _Loading {
 
   @override
   String toString() {
-    return 'PostState.loading()';
+    return 'UserState.loading()';
   }
 
   @override
@@ -672,8 +534,7 @@ class _$LoadingImpl implements _Loading {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String message) error,
-    required TResult Function(List<PostModel> postsList) postLoaded,
-    required TResult Function(PostModel post) postByIdLoaded,
+    required TResult Function(UserModel user) userLoaded,
   }) {
     return loading();
   }
@@ -684,8 +545,7 @@ class _$LoadingImpl implements _Loading {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String message)? error,
-    TResult? Function(List<PostModel> postsList)? postLoaded,
-    TResult? Function(PostModel post)? postByIdLoaded,
+    TResult? Function(UserModel user)? userLoaded,
   }) {
     return loading?.call();
   }
@@ -696,8 +556,7 @@ class _$LoadingImpl implements _Loading {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String message)? error,
-    TResult Function(List<PostModel> postsList)? postLoaded,
-    TResult Function(PostModel post)? postByIdLoaded,
+    TResult Function(UserModel user)? userLoaded,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -712,8 +571,7 @@ class _$LoadingImpl implements _Loading {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_Error value) error,
-    required TResult Function(_PostsLoaded value) postLoaded,
-    required TResult Function(_PostByIdLoaded value) postByIdLoaded,
+    required TResult Function(_UserLoaded value) userLoaded,
   }) {
     return loading(this);
   }
@@ -724,8 +582,7 @@ class _$LoadingImpl implements _Loading {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Error value)? error,
-    TResult? Function(_PostsLoaded value)? postLoaded,
-    TResult? Function(_PostByIdLoaded value)? postByIdLoaded,
+    TResult? Function(_UserLoaded value)? userLoaded,
   }) {
     return loading?.call(this);
   }
@@ -736,8 +593,7 @@ class _$LoadingImpl implements _Loading {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_Error value)? error,
-    TResult Function(_PostsLoaded value)? postLoaded,
-    TResult Function(_PostByIdLoaded value)? postByIdLoaded,
+    TResult Function(_UserLoaded value)? userLoaded,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -747,7 +603,7 @@ class _$LoadingImpl implements _Loading {
   }
 }
 
-abstract class _Loading implements PostState {
+abstract class _Loading implements UserState {
   const factory _Loading() = _$LoadingImpl;
 }
 
@@ -762,7 +618,7 @@ abstract class _$$ErrorImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$ErrorImplCopyWithImpl<$Res>
-    extends _$PostStateCopyWithImpl<$Res, _$ErrorImpl>
+    extends _$UserStateCopyWithImpl<$Res, _$ErrorImpl>
     implements _$$ErrorImplCopyWith<$Res> {
   __$$ErrorImplCopyWithImpl(
       _$ErrorImpl _value, $Res Function(_$ErrorImpl) _then)
@@ -792,7 +648,7 @@ class _$ErrorImpl implements _Error {
 
   @override
   String toString() {
-    return 'PostState.error(message: $message)';
+    return 'UserState.error(message: $message)';
   }
 
   @override
@@ -818,8 +674,7 @@ class _$ErrorImpl implements _Error {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String message) error,
-    required TResult Function(List<PostModel> postsList) postLoaded,
-    required TResult Function(PostModel post) postByIdLoaded,
+    required TResult Function(UserModel user) userLoaded,
   }) {
     return error(message);
   }
@@ -830,8 +685,7 @@ class _$ErrorImpl implements _Error {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String message)? error,
-    TResult? Function(List<PostModel> postsList)? postLoaded,
-    TResult? Function(PostModel post)? postByIdLoaded,
+    TResult? Function(UserModel user)? userLoaded,
   }) {
     return error?.call(message);
   }
@@ -842,8 +696,7 @@ class _$ErrorImpl implements _Error {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String message)? error,
-    TResult Function(List<PostModel> postsList)? postLoaded,
-    TResult Function(PostModel post)? postByIdLoaded,
+    TResult Function(UserModel user)? userLoaded,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -858,8 +711,7 @@ class _$ErrorImpl implements _Error {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_Error value) error,
-    required TResult Function(_PostsLoaded value) postLoaded,
-    required TResult Function(_PostByIdLoaded value) postByIdLoaded,
+    required TResult Function(_UserLoaded value) userLoaded,
   }) {
     return error(this);
   }
@@ -870,8 +722,7 @@ class _$ErrorImpl implements _Error {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Error value)? error,
-    TResult? Function(_PostsLoaded value)? postLoaded,
-    TResult? Function(_PostByIdLoaded value)? postByIdLoaded,
+    TResult? Function(_UserLoaded value)? userLoaded,
   }) {
     return error?.call(this);
   }
@@ -882,8 +733,7 @@ class _$ErrorImpl implements _Error {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_Error value)? error,
-    TResult Function(_PostsLoaded value)? postLoaded,
-    TResult Function(_PostByIdLoaded value)? postByIdLoaded,
+    TResult Function(_UserLoaded value)? userLoaded,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -893,7 +743,7 @@ class _$ErrorImpl implements _Error {
   }
 }
 
-abstract class _Error implements PostState {
+abstract class _Error implements UserState {
   const factory _Error(final String message) = _$ErrorImpl;
 
   String get message;
@@ -903,73 +753,65 @@ abstract class _Error implements PostState {
 }
 
 /// @nodoc
-abstract class _$$PostsLoadedImplCopyWith<$Res> {
-  factory _$$PostsLoadedImplCopyWith(
-          _$PostsLoadedImpl value, $Res Function(_$PostsLoadedImpl) then) =
-      __$$PostsLoadedImplCopyWithImpl<$Res>;
+abstract class _$$UserLoadedImplCopyWith<$Res> {
+  factory _$$UserLoadedImplCopyWith(
+          _$UserLoadedImpl value, $Res Function(_$UserLoadedImpl) then) =
+      __$$UserLoadedImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<PostModel> postsList});
+  $Res call({UserModel user});
 }
 
 /// @nodoc
-class __$$PostsLoadedImplCopyWithImpl<$Res>
-    extends _$PostStateCopyWithImpl<$Res, _$PostsLoadedImpl>
-    implements _$$PostsLoadedImplCopyWith<$Res> {
-  __$$PostsLoadedImplCopyWithImpl(
-      _$PostsLoadedImpl _value, $Res Function(_$PostsLoadedImpl) _then)
+class __$$UserLoadedImplCopyWithImpl<$Res>
+    extends _$UserStateCopyWithImpl<$Res, _$UserLoadedImpl>
+    implements _$$UserLoadedImplCopyWith<$Res> {
+  __$$UserLoadedImplCopyWithImpl(
+      _$UserLoadedImpl _value, $Res Function(_$UserLoadedImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? postsList = null,
+    Object? user = null,
   }) {
-    return _then(_$PostsLoadedImpl(
-      null == postsList
-          ? _value._postsList
-          : postsList // ignore: cast_nullable_to_non_nullable
-              as List<PostModel>,
+    return _then(_$UserLoadedImpl(
+      null == user
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as UserModel,
     ));
   }
 }
 
 /// @nodoc
 
-class _$PostsLoadedImpl implements _PostsLoaded {
-  const _$PostsLoadedImpl(final List<PostModel> postsList)
-      : _postsList = postsList;
+class _$UserLoadedImpl implements _UserLoaded {
+  const _$UserLoadedImpl(this.user);
 
-  final List<PostModel> _postsList;
   @override
-  List<PostModel> get postsList {
-    if (_postsList is EqualUnmodifiableListView) return _postsList;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_postsList);
-  }
+  final UserModel user;
 
   @override
   String toString() {
-    return 'PostState.postLoaded(postsList: $postsList)';
+    return 'UserState.userLoaded(user: $user)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$PostsLoadedImpl &&
-            const DeepCollectionEquality()
-                .equals(other._postsList, _postsList));
+            other is _$UserLoadedImpl &&
+            (identical(other.user, user) || other.user == user));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_postsList));
+  int get hashCode => Object.hash(runtimeType, user);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$PostsLoadedImplCopyWith<_$PostsLoadedImpl> get copyWith =>
-      __$$PostsLoadedImplCopyWithImpl<_$PostsLoadedImpl>(this, _$identity);
+  _$$UserLoadedImplCopyWith<_$UserLoadedImpl> get copyWith =>
+      __$$UserLoadedImplCopyWithImpl<_$UserLoadedImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -977,10 +819,9 @@ class _$PostsLoadedImpl implements _PostsLoaded {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String message) error,
-    required TResult Function(List<PostModel> postsList) postLoaded,
-    required TResult Function(PostModel post) postByIdLoaded,
+    required TResult Function(UserModel user) userLoaded,
   }) {
-    return postLoaded(postsList);
+    return userLoaded(user);
   }
 
   @override
@@ -989,10 +830,9 @@ class _$PostsLoadedImpl implements _PostsLoaded {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String message)? error,
-    TResult? Function(List<PostModel> postsList)? postLoaded,
-    TResult? Function(PostModel post)? postByIdLoaded,
+    TResult? Function(UserModel user)? userLoaded,
   }) {
-    return postLoaded?.call(postsList);
+    return userLoaded?.call(user);
   }
 
   @override
@@ -1001,12 +841,11 @@ class _$PostsLoadedImpl implements _PostsLoaded {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String message)? error,
-    TResult Function(List<PostModel> postsList)? postLoaded,
-    TResult Function(PostModel post)? postByIdLoaded,
+    TResult Function(UserModel user)? userLoaded,
     required TResult orElse(),
   }) {
-    if (postLoaded != null) {
-      return postLoaded(postsList);
+    if (userLoaded != null) {
+      return userLoaded(user);
     }
     return orElse();
   }
@@ -1017,10 +856,9 @@ class _$PostsLoadedImpl implements _PostsLoaded {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_Error value) error,
-    required TResult Function(_PostsLoaded value) postLoaded,
-    required TResult Function(_PostByIdLoaded value) postByIdLoaded,
+    required TResult Function(_UserLoaded value) userLoaded,
   }) {
-    return postLoaded(this);
+    return userLoaded(this);
   }
 
   @override
@@ -1029,10 +867,9 @@ class _$PostsLoadedImpl implements _PostsLoaded {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Error value)? error,
-    TResult? Function(_PostsLoaded value)? postLoaded,
-    TResult? Function(_PostByIdLoaded value)? postByIdLoaded,
+    TResult? Function(_UserLoaded value)? userLoaded,
   }) {
-    return postLoaded?.call(this);
+    return userLoaded?.call(this);
   }
 
   @override
@@ -1041,175 +878,21 @@ class _$PostsLoadedImpl implements _PostsLoaded {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_Error value)? error,
-    TResult Function(_PostsLoaded value)? postLoaded,
-    TResult Function(_PostByIdLoaded value)? postByIdLoaded,
+    TResult Function(_UserLoaded value)? userLoaded,
     required TResult orElse(),
   }) {
-    if (postLoaded != null) {
-      return postLoaded(this);
+    if (userLoaded != null) {
+      return userLoaded(this);
     }
     return orElse();
   }
 }
 
-abstract class _PostsLoaded implements PostState {
-  const factory _PostsLoaded(final List<PostModel> postsList) =
-      _$PostsLoadedImpl;
+abstract class _UserLoaded implements UserState {
+  const factory _UserLoaded(final UserModel user) = _$UserLoadedImpl;
 
-  List<PostModel> get postsList;
+  UserModel get user;
   @JsonKey(ignore: true)
-  _$$PostsLoadedImplCopyWith<_$PostsLoadedImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$PostByIdLoadedImplCopyWith<$Res> {
-  factory _$$PostByIdLoadedImplCopyWith(_$PostByIdLoadedImpl value,
-          $Res Function(_$PostByIdLoadedImpl) then) =
-      __$$PostByIdLoadedImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({PostModel post});
-}
-
-/// @nodoc
-class __$$PostByIdLoadedImplCopyWithImpl<$Res>
-    extends _$PostStateCopyWithImpl<$Res, _$PostByIdLoadedImpl>
-    implements _$$PostByIdLoadedImplCopyWith<$Res> {
-  __$$PostByIdLoadedImplCopyWithImpl(
-      _$PostByIdLoadedImpl _value, $Res Function(_$PostByIdLoadedImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? post = null,
-  }) {
-    return _then(_$PostByIdLoadedImpl(
-      null == post
-          ? _value.post
-          : post // ignore: cast_nullable_to_non_nullable
-              as PostModel,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$PostByIdLoadedImpl implements _PostByIdLoaded {
-  const _$PostByIdLoadedImpl(this.post);
-
-  @override
-  final PostModel post;
-
-  @override
-  String toString() {
-    return 'PostState.postByIdLoaded(post: $post)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$PostByIdLoadedImpl &&
-            (identical(other.post, post) || other.post == post));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, post);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$PostByIdLoadedImplCopyWith<_$PostByIdLoadedImpl> get copyWith =>
-      __$$PostByIdLoadedImplCopyWithImpl<_$PostByIdLoadedImpl>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(String message) error,
-    required TResult Function(List<PostModel> postsList) postLoaded,
-    required TResult Function(PostModel post) postByIdLoaded,
-  }) {
-    return postByIdLoaded(post);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(String message)? error,
-    TResult? Function(List<PostModel> postsList)? postLoaded,
-    TResult? Function(PostModel post)? postByIdLoaded,
-  }) {
-    return postByIdLoaded?.call(post);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(String message)? error,
-    TResult Function(List<PostModel> postsList)? postLoaded,
-    TResult Function(PostModel post)? postByIdLoaded,
-    required TResult orElse(),
-  }) {
-    if (postByIdLoaded != null) {
-      return postByIdLoaded(post);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Error value) error,
-    required TResult Function(_PostsLoaded value) postLoaded,
-    required TResult Function(_PostByIdLoaded value) postByIdLoaded,
-  }) {
-    return postByIdLoaded(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_Error value)? error,
-    TResult? Function(_PostsLoaded value)? postLoaded,
-    TResult? Function(_PostByIdLoaded value)? postByIdLoaded,
-  }) {
-    return postByIdLoaded?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Error value)? error,
-    TResult Function(_PostsLoaded value)? postLoaded,
-    TResult Function(_PostByIdLoaded value)? postByIdLoaded,
-    required TResult orElse(),
-  }) {
-    if (postByIdLoaded != null) {
-      return postByIdLoaded(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _PostByIdLoaded implements PostState {
-  const factory _PostByIdLoaded(final PostModel post) = _$PostByIdLoadedImpl;
-
-  PostModel get post;
-  @JsonKey(ignore: true)
-  _$$PostByIdLoadedImplCopyWith<_$PostByIdLoadedImpl> get copyWith =>
+  _$$UserLoadedImplCopyWith<_$UserLoadedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

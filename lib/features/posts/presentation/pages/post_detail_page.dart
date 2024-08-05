@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:techjar_task_rujeet/core/injectable/injection.dart';
+import 'package:techjar_task_rujeet/features/comments/presentation/bloc/comment_bloc.dart';
 import 'package:techjar_task_rujeet/features/posts/data/models/post_model.dart';
+import 'package:techjar_task_rujeet/features/posts/presentation/widgets/author_widget.dart';
 
+import '../../../comments/data/models/comment_model.dart';
 import '../bloc/post_bloc.dart';
+import '../widgets/comment_tile.dart';
 
 class PostDetailPage extends StatefulWidget {
   final int postId;
@@ -36,7 +40,7 @@ class _PostDetailPageState extends State<PostDetailPage> {
                     return Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        // _PostAuthor(userId: post.userId ?? 0),
+                        AuthorWidget(userId: post.userId ?? 0),
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Text(
@@ -61,7 +65,7 @@ class _PostDetailPageState extends State<PostDetailPage> {
                           ),
                         ),
                         Expanded(
-                          child: _PostComments(postId: post.id ?? 0),
+                          child: PostComments(postId: post.id ?? 0),
                         )
                       ],
                     );
@@ -74,80 +78,61 @@ class _PostDetailPageState extends State<PostDetailPage> {
   }
 }
 
-class _PostComments extends StatefulWidget {
-  const _PostComments({
+class PostComments extends StatefulWidget {
+  final int postId;
+
+  const PostComments({
     super.key,
     required this.postId,
   });
 
-  final int postId;
-
   @override
-  State<_PostComments> createState() => _PostCommentsState();
+  State<PostComments> createState() => _PostCommentsState();
 }
 
-class _PostCommentsState extends State<_PostComments> {
+class _PostCommentsState extends State<PostComments> {
+  final commentBloc = getIt<CommentBloc>();
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<PostBloc, PostState>(
-      builder: (context, state) {
-        return state.maybeWhen(
-          orElse: () {
-            return const SizedBox();
-          },
-        );
-      },
+    return BlocProvider(
+      create: (context) =>
+          commentBloc..add(CommentEvent.getCommentsOfPost(widget.postId)),
+      child: BlocBuilder<CommentBloc, CommentState>(
+        builder: (context, state) {
+          return state.maybeWhen(
+            orElse: () {
+              return const SizedBox();
+            },
+            commentsLoaded: (List<CommentModel> comments) {
+              return Column(
+                children: <Widget>[
+                  Expanded(
+                    child: ListView.separated(
+                      physics: const BouncingScrollPhysics(),
+                      separatorBuilder: (context, index) {
+                        return const Divider(color: Colors.grey);
+                      },
+                      itemCount: comments.length,
+                      itemBuilder: (context, index) {
+                        return CommentTile(comment: comments[index]);
+                      },
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: TextFormField(
+                      decoration: const InputDecoration(
+                        labelText: 'Write a comment',
+                      ),
+                      onFieldSubmitted: (value) {},
+                    ),
+                  ),
+                ],
+              );
+            },
+          );
+        },
+      ),
     );
   }
 }
-
-// class _PostAuthor extends StatefulWidget {
-//   const _PostAuthor({
-//     super.key,
-//     required this.userId,
-//   });
-
-//   final int userId;
-
-//   @override
-//   State<_PostAuthor> createState() => _PostAuthorState();
-// }
-
-// class _PostAuthorState extends State<_PostAuthor> {
-  
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return FutureBuilder<User>(
-//       future: _userFuture,
-//       builder: (context, snapshot) {
-//         if (snapshot.connectionState == ConnectionState.waiting) {
-//           return const SizedBox.shrink();
-//         }
-
-//         if (snapshot.hasError) return const Text('An error!');
-
-//         if (!snapshot.hasData) return const Text('No user found!');
-
-//         final user = snapshot.data!;
-
-//         return TextButton.icon(
-//           icon: const Icon(Icons.person),
-//           label: Text(user.name),
-//           style: TextButton.styleFrom(
-//             foregroundColor: Colors.blueAccent,
-//           ),
-//           onPressed: () {
-//             Navigator.of(context).push(
-//               MaterialPageRoute(
-//                 builder: (context) {
-//                   return UserScreen(userId: user.id);
-//                 },
-//               ),
-//             );
-//           },
-//         );
-//       },
-//     );
-//   }
-// }
