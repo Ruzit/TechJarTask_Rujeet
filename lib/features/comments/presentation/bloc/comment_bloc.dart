@@ -14,8 +14,8 @@ class CommentBloc extends Bloc<CommentEvent, CommentState> {
   final CommentController controller;
   CommentBloc(this.controller) : super(const _Initial()) {
     on<CommentEvent>(
-      (event, emit) {
-        event.when(
+      (event, emit) async {
+        await event.when(
           started: () {},
           getCommentsOfPost: (int postId) async {
             emit(const CommentState.loading());

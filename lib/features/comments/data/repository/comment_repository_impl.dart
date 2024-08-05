@@ -38,11 +38,25 @@ class CommentRepositoryImpl implements CommentRepository {
       CommentModel comment, int postId) async {
     try {
       final res = await _client.post(
-          Uri.parse('$baseUrl/posts/$postId/comments'),
-          body: comment.toJson());
-      if (res.statusCode == 200) {
+        Uri.parse('$baseUrl/posts/$postId/comments'),
+        body: {
+          'name': comment.name,
+          'email': comment.email,
+          'body': comment.body,
+          'id': comment.id.toString(),
+          'postId': postId.toString(),
+        },
+      );
+      print(res);
+      if (res.statusCode == 200 || res.statusCode == 201) {
         final rawPost = json.decode(res.body);
-        return right(CommentModel.fromJson(rawPost));
+        return right(CommentModel(
+          id: rawPost['id'],
+          // postId: rawPost['postId'],
+          name: rawPost['name'],
+          email: rawPost['email'],
+          body: rawPost['body'],
+        ));
       } else {
         return left('Exception');
       }

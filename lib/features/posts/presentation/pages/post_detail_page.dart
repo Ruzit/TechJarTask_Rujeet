@@ -97,12 +97,31 @@ class _PostCommentsState extends State<PostComments> {
     return BlocProvider(
       create: (context) =>
           commentBloc..add(CommentEvent.getCommentsOfPost(widget.postId)),
-      child: BlocBuilder<CommentBloc, CommentState>(
+      child: BlocConsumer<CommentBloc, CommentState>(
+        listener: (context, state) {
+          state.whenOrNull(
+            commentspostSuccess: (CommentModel comment) {
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content:
+                      Text('Commented Successfully. Post ID: ${comment.id}'),
+                ),
+              );
+              commentBloc.add(CommentEvent.getCommentsOfPost(widget.postId));
+            },
+          );
+        },
         builder: (context, state) {
           return state.maybeWhen(
             orElse: () {
               return const SizedBox();
             },
+            error: (String error) {
+              return Text(error);
+            },
+            loading: () => const Center(
+              child: CircularProgressIndicator(),
+            ),
             commentsLoaded: (List<CommentModel> comments) {
               return Column(
                 children: <Widget>[
@@ -124,7 +143,21 @@ class _PostCommentsState extends State<PostComments> {
                       decoration: const InputDecoration(
                         labelText: 'Write a comment',
                       ),
-                      onFieldSubmitted: (value) {},
+                      onFieldSubmitted: (value) {
+                        commentBloc.add(
+                          CommentEvent.postComment(
+                            CommentModel(
+                              body: value,
+                              postId: widget.postId,
+                              name: 'Rujeet',
+                              email: 'C6v6H@example.com',
+                              id: 1,
+                            ),
+                            widget.postId,
+                          ),
+                        );
+                        FocusScope.of(context).unfocus();
+                      },
                     ),
                   ),
                 ],
